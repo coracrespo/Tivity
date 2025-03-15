@@ -1,0 +1,65 @@
+{
+    "proyectos": [
+      {
+        "id": 1,
+        "name": "Diseño Web",
+        "description": "Proyecto de diseño web para cliente",
+        "info": "Fecha: 11/02/2025",
+        "status": "on-revision",
+        "tareas_completadas": 4,
+        "tareas_totales": 20,
+        "url": "diseno-web.html"
+      },
+      {
+        "id": 2,
+        "name": "Facturación 2025",
+        "description": "Sistema de facturación eficiente.",
+        "info": "Fecha: 15/03/2025",
+        "status": "done",
+        "tareas_completadas": 2,
+        "tareas_totales": 10,
+        "url": "facturacion.html"
+      },
+      {
+        "id": 3,
+        "name": "Posgrado Front-End",
+        "description": "Desarrollo avanzado con Vue.js",
+        "info": "Fecha: 20/04/2025",
+        "status": "in-progress",
+        "tareas_completadas": 15,
+        "tareas_totales": 32,
+        "url": "posgrado-front-end.html"
+      },
+      {
+        "id": 4,
+        "name": "E-commerce App",
+        "description": "Plataforma de ventas en línea",
+        "info": "Fecha: 05/05/2025",
+        "status": "in-progress",
+        "tareas_completadas": 3,
+        "tareas_totales": 25,
+        "url": "ecommerce-app.html"
+      },
+      {
+        "id": 5,
+        "name": "Portfolio",
+        "description": "Actualización de porftfolio con últimos proyectos ",
+        "info": "Fecha: 12/06/2025",
+        "status": "on-revision",
+        "tareas_completadas": 8,
+        "tareas_totales": 18,
+        "url": "portfolio.html"
+      },
+      {
+        "id": 6,
+        "name": "Evento editorial",
+        "description": "Actividad organizada en torno a contenidos impresos",
+        "info": "Fecha: 30/07/2025",
+        "status": "done",
+        "tareas_completadas": 12,
+        "tareas_totales": 12,
+        "url": "evento-editorial.html"
+      }
+    ]
+  }
+  

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estructura.css">
+    <link rel="stylesheet" href="../css/botones.css">
+    <script src="../js/sidebar.js" defer></script>
+    <script src="../js/appvue.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+
+            <!-- Botón de menú hamburguesa -->
+            <button id="menu-toggle" class="hamburger-menu">
+                ☰
+            </button>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <a href="dashboard.html">
+                            <img src="../assets/Logo tivity.svg" alt="Logo Tivity">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-search">
+                    <img src="../assets/search.svg" alt="search-icon">
+                    <input type="search" class="search-input" placeholder="Search...">
+                </div>
+
+                <div class="sidebar-workspace">
+                    <p class="section-title">Espacio de trabajo</p>
+                    <nav class="menu">
+                        <ul>
+                            <li class="menu-item">
+                                <button class="dropdown-btn">
+                                    <div>
+                                        <img src="../assets/folder.svg" alt="Icono carpeta">
+                                        <span>Proyectos</span>
+                                    </div>
+                                    <img src="../assets/chevron-down.svg" class="chevron-icon" alt="Desplegar">
+                                </button>
+                                <ul class="submenu">
+                                    <li v-for="proyecto in proyectos" :key="proyecto.id">
+                                        <a :href="proyecto.url">{{ proyecto.name }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="sidebar-config">
+                    <nav class="config-nav">
+                        <ul>
+                            <li><a href="#">Configuración</a></li>
+                            <li><a href="#">Papelera</a></li>
+                            <li><a href="#">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Contenido Principal -->
+            <div class="dashboard-container">
+                <nav class="breadcrumb">
+                    <a href="#">Proyectos</a> /
+                </nav>
+                <div class="project-h1">
+                    <h1>Proyectos</h1>
+                </div>
+                <div class="separador"></div>
+                <div class="buttons">
+                    <button class="btn btn-primary-home">
+                        <a href="crear-proyecto.html">Crear nuevo</a>
+                    </button>
+                </div>
+
+                <!-- Listado de proyectos dinámicos con Vue -->
+                <div class="total-cards">
+                    <a v-for="proyecto in proyectos" :href="proyecto.url" class="card">
+                        <div class="title">
+                            <div class="project-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M18.3333 16.3333C18.3333 16.7754 18.1577 17.1993 17.8451 17.5118C17.5326 17.8244 17.1087 18 16.6666 18H3.33329C2.89127 18 2.46734 17.8244 2.15478 17.5118C1.84222 17.1993 1.66663 16.7754 1.66663 16.3333V4.66667C1.66663 4.22464 1.84222 3.80072 2.15478 3.48816C2.46734 3.17559 2.89127 3 3.33329 3H7.49996L9.16663 5.5H16.6666C17.1087 5.5 17.5326 5.67559 17.8451 5.98816C18.1577 6.30072 18.3333 6.72464 18.3333 7.16667V16.3333Z"
+                                        stroke="#2A2E33" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <h2>{{ proyecto.name }}</h2>
+                            </div>
+                            <section :class="['status-section', proyecto.status]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none" aria-label="Estado en proceso">
+                                    <circle cx="6.66669" cy="6.5" r="6" fill="#F2B828" />
+                                </svg>
+                                <span class="status-text">
+                                    {{ proyecto.status }}
+                                </span>
+                            </section>  
+                        </div>
+                        <div class="info">
+                            <p>{{ proyecto.info}}</p>
+                            <p>Tareas completadas: {{ proyecto.tareas_completadas }}/{{ proyecto.tareas_totales }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

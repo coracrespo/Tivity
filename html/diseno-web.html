@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseno web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/sidebar.css">
+        <link rel="stylesheet" href="../css/estructura.css">
+        <link rel="stylesheet" href="../css/botones.css">
+        <script src="../js/sidebar.js" defer></script>
+        <script src="../js/drag-and-drop.js" defer></script>
+        <script src="../js/appvue.js" defer></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../js/cards-functions.js" defer></script>
+        <link rel="stylesheet" href="../css/estructura.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+
+            <!-- Botón de menú hamburguesa -->
+            <button id="menu-toggle" class="hamburger-menu">
+                ☰
+            </button>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <a href="dashboard.html">
+                            <img src="../assets/Logo tivity.svg" alt="Logo Tivity">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-search">
+                    <img src="../assets/search.svg" alt="search-icon">
+                    <input type="search" class="search-input" placeholder="Search...">
+                </div>
+
+                <div class="sidebar-workspace">
+                    <p class="section-title">Espacio de trabajo</p>
+                    <nav class="menu">
+                        <ul>
+                            <li class="menu-item">
+                                <button class="dropdown-btn">
+                                    <div>
+                                        <img src="../assets/folder.svg" alt="Icono carpeta">
+                                        <span>Proyectos</span>
+                                    </div>
+                                    <img src="../assets/chevron-down.svg" class="chevron-icon" alt="Desplegar">
+                                </button>
+                                <ul class="submenu">
+                                    <li v-for="proyecto in proyectos" :key="proyecto.id">
+                                        <a :href="proyecto.url">{{ proyecto.name }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="sidebar-config">
+                    <nav class="config-nav">
+                        <ul>
+                            <li><a href="#">Configuración</a></li>
+                            <li><a href="#">Papelera</a></li>
+                            <li><a href="#">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Contenido Principal -->
+            <main class="main-content">
+                <nav class="breadcrumb">
+                    <a href="dashboard.html">Proyectos</a> / Diseño web
+                </nav>
+                <div class="buttons">
+                    <button class="btn btn-primary">Editar proyecto</button>
+                    <button class="btn btn-more">⋮</button>
+                </div>
+
+                <div class="project-h1">
+                    <h1>Diseño web</h1>
+                </div>
+
+                <div class="project-description">
+                    <p class="body-1">
+                        Este proyecto tiene como objetivo desarrollar una landing page atractiva y optimizada que sirva como puerta de entrada para captar leads y promocionar un producto o servicio. La landing debe ser altamente visual, con una navegación intuitiva y un diseño centrado en la conversión.
+                    </p>
+                </div>
+
+                <!-- la aprte del titulo + buscador-->
+                <div class="titulo-tareas">
+                    <h3>To do's</h3>
+                </div>
+                <div class="separador"></div>
+
+                <!--aquí empiezan las cards-->
+
+                <div class="cards-column-container">
+
+
+                    <div class="card-column">
+
+                        <div class="task-header in-progress">
+                            <span class="status-dot"></span>
+                            <p class="body-2">in-progress</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Implementar botones de llamada a la acción (CTAs) estratégicos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Revisar la accesibilidad y optimización para SEO.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Implementar efectos visuales y animaciones para mejorar la interacción.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="new-card">
+                            <p>+ Nueva</p>
+                        </div>
+                    </div>
+
+                    <div class="card-column">
+
+                        <div class="task-header on-revision">
+                            <span class="status-dot"></span>
+                            <p class="body-2">on-revision</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Programar formularios de contacto con validación y protección contra spam.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Conectar el formulario a un servicio de email marketing o base de datos.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Ajustar elementos según métricas y feedback de los usuarios.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="new-card">
+                            <p>+ Nueva</p>
+                        </div>
+                    </div>
+
+                    <div class="card-column">
+
+                        <div class="task-header done">
+                            <span class="status-dot"></span>
+                            <p class="body-2">done</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Diseñar la landing en Figma/Adobe XD siguiendo principios de usabilidad.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Implementar la estructura en HTML5 y CSS3, asegurando semántica adecuada.</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">
+
+                                <div class="project-title">
+                                    <span class="task-icon">➜</span>
+                                    <p class="description-text">Definir los objetivos de la landing.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="card-actions">
+                                    <div>
+                                        <img src="/assets/edit.svg" alt="Editar">
+                                    </div>
+                                    <div>
+                                        <img src="/assets/delete.svg" alt="Eliminar">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="new-card">
+                            <p>+ Nueva</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
